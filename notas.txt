@@ -1,0 +1,13 @@
+admin:
+user = jhulia
+password = 123456
+
+entrar no env = loja_env/scripts/activate
+
+{% extends 'core/base.html '%}
+
+{% block content %}
+
+    Página Principal / Home
+
+ {% endblock%}
