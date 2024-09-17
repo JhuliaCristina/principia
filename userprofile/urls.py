@@ -8,6 +8,8 @@ principia = 'app'
 urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='userprofile/login.html'), name='login'),
+    path('minhaconta/update/', views.update_profile, name='update'),
+    path('minhaconta/delete/', views.delete_profile, name='delete'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('loja/', views.minha_loja, name='loja'),
     path('minhaconta/', views.minha_conta, name='minhaconta'),

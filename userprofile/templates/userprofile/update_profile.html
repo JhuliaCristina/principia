@@ -1,0 +1,32 @@
+        
+{% extends 'core/base.html '%}
+
+{% block tittle %} Cadastrar Usuário {% endblock%}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title style="color: #000000; font-size: 20px;">Update</title>
+    </head>
+    <body>        
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Atualizar Informações da Conta</h2>
+            {{ form.as_p }}
+        
+            <h2>Atualizar Perfil</h2>
+            <label for="id_username">Username do Perfil:</label>
+            <input type="text" name="username" id="id_username" value="{{ username }}">
+        
+            <label for="id_password">Nova Senha do Perfil (se desejar alterar):</label>
+            <input type="password" name="password" id="id_password" placeholder="Digite uma nova senha">
+        
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </body>
+</html>
+    
+{% endblock %}

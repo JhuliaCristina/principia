@@ -2,16 +2,23 @@
 
 {% block tittle %} Cadastrar Usuário {% endblock%}
 
+
 {% block content %}
 
- <h1 class="text-2xl">Página de Cadastro</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title style="color: #000000; font-size: 20px;">Register</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button style="color: #fff; background-color: #000000; width: 100px; height: 40px; border-radius: 5px;" type="submit">
+            Register
+        </button>
+    </form>
+</body>
+</html>
 
- <form method="post" action=".">
-    {% csrf_token %}
-
-      {{ form.as_p }}
-
-    <button class="py-2 px-8 bg-black" style="color : #ffff"> Cadastrar </button>
- </form>
-
- {% endblock%}
+{% endblock %}

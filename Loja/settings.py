@@ -14,7 +14,7 @@ ALLOWED_HOSTS = []
 
 LOGOUT_REDIRECT_URL = 'frontpage'
 LOGIN_REDIRECT_URL = 'minhaconta'
-
+LOGIN_URL = 'login'
 
 
 INSTALLED_APPS = [

@@ -1,0 +1,27 @@
+
+{% extends 'core/base.html '%}
+
+{% block tittle %} Cadastrar Usuário {% endblock%}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title style="color: #000000; font-size: 20px;">Update</title>
+    </head>
+    <body style="flex-direction: column;">  
+
+        <form style = "display: flex; justify-content: center;" method="POST">
+            {% csrf_token %}
+            <p style="padding-bottom: 25px;">Tem certeza que deseja deletar sua conta?</p>
+            <div style="display: flex; gap: 10px;">
+                <button style="width: 100px; height: 40px; background-color: #000000; color: #ffffff; border: none; cursor: pointer; border-radius: 5px;" type="submit" name = "confirm" value = "yes">Sim, deletar</button>
+                <a style="display: inline-block; width: 100px; height: 40px; line-height: 40px; text-align: center; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;" href="{% url 'minhaconta' %}">Cancelar</a>
+            </div>    
+        </form>
+    </body>
+</html>
+        
+{% endblock %}
