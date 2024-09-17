@@ -5,13 +5,24 @@
 {% block content %}
 
  <h1 class="text-2xl">Página da Minha Conta</h1>
- <form action="{% url 'logout' %}"  method="post" class="mt-8 inline-block py-4 px-8 bg-black text-white">
-    {% csrf_token%}
-    {{ form.as_p }}
 
-    <button class="py-2 px-8 bg-black" style="color : #ffff"> Sair </button>
- </form>
+ <div class="mt-8">
+   <h2 class="text-xl font-semibold">Informações do Usuário</h2>
+   <p><strong>Nome de Usuário:</strong> {{ user.username }}</p>
+   <!-- Adicione outras informações do usuário aqui -->
+ </div>
 
+
+ <div class="mt-8 flex space-x-4">
+   <form action="{% url 'logout' %}"  method="post" >
+      {% csrf_token%}
+      {{ form.as_p }}
+
+      <button class="py-2 px-8 bg-black text-white inline-block" style="color : #ffff ;height: 40px;"> Sair </button>
+   </form>
+   <a style = "height: 40px;" href="{% url 'update' %}" class="py-2 px-8 bg-black text-white inline-block">Atualizar</a>
+   <a style = "height: 40px;" href="{% url 'delete' %}" class="py-2 px-8 bg-black text-white inline-block">Deletar</a>
+ </div>
 
  {% endblock%}
 

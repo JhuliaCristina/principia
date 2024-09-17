@@ -14,7 +14,8 @@ def vendor_details(request,pk):
 
 @login_required
 def minha_conta(request):
-    return render(request, 'userprofile/minhaconta.html')
+    user = request.user
+    return render(request, 'userprofile/minhaconta.html',{'user': user})
 
 def minha_loja(request):
     return render(request, 'userprofile/minhaloja.html')
