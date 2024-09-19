@@ -70,7 +70,7 @@ def update_profile(request):
             userprofile.password = request.POST.get('password')  # Se for plain-text
             userprofile.save()
 
-            return redirect('login')  # Redireciona após atualizar
+            return redirect('frontpage')  # Redireciona após atualizar
     else:
         # Preenche o formulário com os dados atuais do usuário e perfil
         form = UserCreationForm(instance=user)
